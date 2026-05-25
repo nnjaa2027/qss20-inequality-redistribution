@@ -1,7 +1,7 @@
 # Does Party Identity Displace Income as a Driver of Redistribution Preferences?
 # Evidence from the ANES (1970–2024)
 
-# Nathaniel Njaa | QSS 20 | Dartmouth College | Spring 2026**
+# Nathaniel Njaa | QSS 20 | Dartmouth College | Spring 2026
 
 ## Overview
 
@@ -11,7 +11,7 @@ Rising income inequality in the US has not produced the surge in redistributive 
 
 ## Data
 
-**ANES Cumulative Time Series File, 1948–2024** — download free at https://electionstudies.org. The raw CSV (~156 MB) is not stored here due to file size; set the path in `code/01_clean.py`. Key variables: `VCF0830` (redistribution support, 7-pt), `VCF0114` (income quintile), `VCF0301` (party ID, 7-pt), `VCF0004` (year).
+**ANES Cumulative Time Series File, 1948–2024** — download free at https://electionstudies.org. The raw CSV (~156 MB) is not stored here due to file size (Github max of 100MB); set the path in `code/01_clean.py`. Key variables: `VCF0830` (redistribution support, 7-pt), `VCF0114` (income quintile), `VCF0301` (party ID, 7-pt), `VCF0004` (year).
 
 ## Repository Structure
 
