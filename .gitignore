@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ANES raw data (too large for GitHub)
+data/*.csv
+output/anes_clean.csv
