@@ -35,7 +35,7 @@ output/
 
 ## Preliminary Findings
 
-The income-redistribution correlation is nearly flat (r = -0.076), meaning income barely predicts redistribution views on its own. Instead, the partisan gap among low-income voters grew from ~0.9 points in the 1970s to ~2.45 points by 2020 — party ID has become the dominant driver, consistent with Kelly & Enns (2010).
+The income-redistribution correlation is nearly flat (r = -0.076) — contrary to Meltzer-Richard, knowing someone's income tells you little about their redistribution views. What does predict those views is party: among low-income voters, the Democrat-Republican gap grew from ~0.9 points in the 1970s to ~2.45 by 2020, meaning two poor people can hold opposite views depending on their party, consistent with Kelly & Enns (2010).
 
 ---
 
