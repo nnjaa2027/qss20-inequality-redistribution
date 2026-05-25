@@ -1,7 +1,9 @@
 # Does Party Identity Displace Income as a Driver of Redistribution Preferences?
-# Evidence from the ANES (1970–2024)
+### Evidence from the ANES (1970–2024)
 
-# Nathaniel Njaa | QSS 20 | Dartmouth College | Spring 2026
+**Nathaniel Njaa | QSS 20 | Dartmouth College | Spring 2026**
+
+---
 
 ## Overview
 
@@ -9,26 +11,33 @@ Rising income inequality in the US has not produced the surge in redistributive 
 
 **Research question:** Has party identification increasingly displaced income as the primary predictor of redistribution preferences among American voters from 1970 to 2024?
 
+---
+
 ## Data
 
-**ANES Cumulative Time Series File, 1948–2024** — download free at https://electionstudies.org. The raw CSV (~156 MB) is not stored here due to file size (Github max of 100MB); set the path in `code/01_clean.py`. Key variables: `VCF0830` (redistribution support, 7-pt), `VCF0114` (income quintile), `VCF0301` (party ID, 7-pt), `VCF0004` (year).
+**ANES Cumulative Time Series File, 1948–2024** — download free at https://electionstudies.org. The raw CSV (~156 MB) is not stored here due to file size (GitHub max of 100MB); set the path in `code/01_clean.ipynb`. Key variables: `VCF0830` (redistribution support, 7-pt), `VCF0114` (income quintile), `VCF0301` (party ID, 7-pt), `VCF0004` (year).
+
+---
 
 ## Repository Structure
 
 ```
 code/
-  01_clean.py       — load ANES, clean variables, save analysis-ready CSV
-  02_analyze.py     — descriptive stats, decade correlations, OLS regressions
-  03_visualize.py   — generate figures saved to output/
+  01_clean.ipynb      — load ANES, clean variables, save analysis-ready CSV
+  02_analyze.ipynb    — descriptive stats, decade correlations, OLS regressions
+  03_visualize.ipynb  — generate figures saved to output/
 output/
   viz1_gini_overlay.png     — partisan gap over time with Gini overlay
   viz2_small_multiples.png  — redistribution by income x party, by decade
 ```
 
+---
+
 ## Preliminary Findings
 
-The income-redistribution correlation is nearly flat (r = -0.076). The partisan gap among low-income voters grew from ~0.9 points in the 1970s to ~2.45 points by 2020, tracking the rise in the Gini coefficient — consistent with Kelly & Enns (2010).
+The income-redistribution correlation is nearly flat (r = -0.076), meaning income barely predicts redistribution views on its own. Instead, the partisan gap among low-income voters grew from ~0.9 points in the 1970s to ~2.45 points by 2020 — party ID has become the dominant driver, consistent with Kelly & Enns (2010).
 
+---
 
 ## Requirements
 
