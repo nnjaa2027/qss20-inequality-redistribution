@@ -35,7 +35,7 @@ output/
 
 ## Preliminary Findings
 
-The income-redistribution correlation is nearly flat (r = -0.076) — contrary to Meltzer-Richard, knowing someone's income tells you little about their redistribution views. What does predict those views is party: among low-income voters, the Democrat-Republican gap grew from ~0.9 points in the 1970s to ~2.45 by 2020, meaning two poor people can hold opposite views depending on their party, consistent with Kelly & Enns (2010).
+The income-redistribution correlation is nearly flat (r = -0.076). Contrary to Meltzer-Richard, richer and poorer Americans hold surprisingly similar views on redistribution, when you would expect income to be the dominant predictor. Instead, among low-income voters, the Democrat-Republican gap grew from ~0.9 points in the 1970s to ~2.45 by 2020. Low-income Democrats and low-income Republicans have pulled dramatically apart even as both groups experienced the same rise in inequality, consistent with Kelly & Enns (2010).
 
 ---
 
