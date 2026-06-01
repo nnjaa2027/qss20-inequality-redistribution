@@ -220,4 +220,4 @@ __marimo__/
 # ANES raw data (too large for GitHub)
 
 output/anes_clean.csv
-.DS_Store
+**/.DS_Store
