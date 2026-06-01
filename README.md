@@ -7,15 +7,17 @@
 
 ## Overview
 
-Rising income inequality in the US has not produced the surge in redistributive policy demand that the Meltzer-Richard model predicts. This project tests one explanation: party identity has increasingly displaced income as the primary driver of redistribution preferences. Using the ANES Cumulative Time Series (1970–2024, N=46,708), I examine whether the partisan gap in redistribution attitudes has grown over time while the income gradient has flattened, and whether this tracks rising inequality as measured by the Gini coefficient.
-
-**Research question:** Has party identification increasingly displaced income as the primary predictor of redistribution preferences among American voters from 1970 to 2024?
+Rising income inequality in the US has not produced the surge in redistributive demand that the Meltzer-Richard model predicts. This project tests two linked explanations: (1) income has become a weaker predictor of redistribution attitudes over time, and (2) redistribution attitudes have become more tightly bound to party identity rather than driving vote choice independently. Using the ANES Cumulative Time Series (1970–2024, N=46,708), I track how the partisan gap in redistribution preferences has grown while the income gradient has flattened, and test whether redistribution attitudes predict presidential vote choice differently across decades.
 
 ---
 
 ## Data
 
-**ANES Cumulative Time Series File, 1948–2024** — download free at https://electionstudies.org. The raw CSV (~156 MB) is not stored here due to file size (GitHub max of 100MB); set the path in `code/01_clean.ipynb`. Key variables: `VCF0830` (redistribution support, 7-pt), `VCF0114` (income quintile), `VCF0301` (party ID, 7-pt), `VCF0004` (year).
+**Primary: ANES Cumulative Time Series File, 1948–2024**
+Download free at [electionstudies.org](https://electionstudies.org). The raw CSV (~156 MB) is not stored in this repo due to file size. After downloading, update the `DATA_PATH` variable at the top of `code/01_clean.ipynb` to point to the file on your machine.
+
+**Secondary: Census Bureau Historical Income Table H-4 (Gini coefficients)**
+Stored at `data/gini_census.csv`. Source: [Census Bureau Historical Income Tables](https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html).
 
 ---
 
@@ -23,22 +25,59 @@ Rising income inequality in the US has not produced the surge in redistributive 
 
 ```
 code/
-  01_clean.ipynb      — load ANES, clean variables, save analysis-ready CSV
-  02_analyze.ipynb    — descriptive stats, decade correlations, OLS regressions
-  03_visualize.ipynb  — generate figures saved to output/
+  01_clean.ipynb
+  02_analyze.ipynb
+  03_visualize.ipynb
+data/
+  gini_census.csv
 output/
-  viz1_gini_overlay.png     — partisan gap over time with Gini overlay
-  viz2_small_multiples.png  — redistribution by income x party, by decade
+  anes_clean.csv
+  decade_coefs.csv
+  viz1_gini_overlay.png
+  viz2_aggregate_redist.png
+  viz3_small_multiples.png
+  viz4_coef_plot.png
 ```
 
 ---
 
-## Preliminary Findings
+## Scripts
 
-The income-redistribution correlation is nearly flat (r = -0.076). Contrary to Meltzer-Richard, richer and poorer Americans hold surprisingly similar views on redistribution, when you would expect income to be the dominant predictor. Instead, among low-income voters, the Democrat-Republican gap grew from ~0.9 points in the 1970s to ~2.45 by 2020. Low-income Democrats and low-income Republicans have pulled dramatically apart even as both groups experienced the same rise in inequality, consistent with Kelly & Enns (2010).
+### [01_clean.ipynb](code/01_clean.ipynb)
+**Takes in:** Raw ANES CSV (path set by `DATA_PATH` variable)  
+**Does:** Loads 10 key variables, coerces to numeric, recodes redistribution support (flipped so 7 = strongly pro), collapses party ID into Democrat/Independent/Republican, creates binary vote choice variable, filters to 1970+ and drops missing on core vars  
+**Outputs:** `output/anes_clean.csv` (N=46,708, 12 columns)
+
+### [02_analyze.ipynb](code/02_analyze.ipynb)
+**Takes in:** `output/anes_clean.csv`  
+**Does:** Sample characterization table; income-redistribution correlations by decade; partisan gap over time; weighted OLS predicting redistribution support (3 models); logistic regression predicting Republican vote choice (4 models); decade-by-decade logit coefficients  
+**Outputs:** `output/decade_coefs.csv`
+
+### [03_visualize.ipynb](code/03_visualize.ipynb)
+**Takes in:** `output/anes_clean.csv`, `output/decade_coefs.csv`, `data/gini_census.csv`  
+**Does:** Generates all four paper figures  
+**Outputs:**
+- `output/viz1_gini_overlay.png` — partisan gap among low-income voters over time with Gini overlay
+- `output/viz2_aggregate_redist.png` — aggregate redistribution support over time with Gini overlay
+- `output/viz3_small_multiples.png` — redistribution by income quintile × party across three decades
+- `output/viz4_coef_plot.png` — logit coefficient on redistribution support predicting vote choice, by decade
+
+---
+
+## How to Run
+
+Run notebooks in order:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace code/01_clean.ipynb
+jupyter nbconvert --to notebook --execute --inplace code/02_analyze.ipynb
+jupyter nbconvert --to notebook --execute --inplace code/03_visualize.ipynb
+```
 
 ---
 
 ## Requirements
 
-`pip install pandas numpy matplotlib scipy statsmodels`
+```
+pip install pandas numpy matplotlib statsmodels
+```
