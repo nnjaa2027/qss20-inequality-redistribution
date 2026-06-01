@@ -57,8 +57,8 @@ output/
 **Takes in:** `output/anes_clean.csv`, `output/decade_coefs.csv`, `data/gini_census.csv`  
 **Does:** Generates all four paper figures  
 **Outputs:**
-- `output/viz1_gini_overlay.png` — partisan gap among low-income voters over time with Gini overlay
-- `output/viz2_aggregate_redist.png` — aggregate redistribution support over time with Gini overlay
+- `output/viz1_aggregate_redist.png` — aggregate redistribution support over time with Gini overlay
+- `output/viz2_gini_overlay.png` — partisan gap among low-income voters over time with Gini overlay
 - `output/viz3_small_multiples.png` — redistribution by income quintile × party across three decades
 - `output/viz4_coef_plot.png` — logit coefficient on redistribution support predicting vote choice, by decade
 
