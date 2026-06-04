@@ -3,6 +3,8 @@
 
 **Nathaniel Njaa | QSS 20 | Dartmouth College | Spring 2026**
 
+**Live website:** https://website-eosin-three-86.vercel.app
+
 ---
 
 ## Overview
@@ -33,10 +35,14 @@ data/
 output/
   anes_clean.csv
   decade_coefs.csv
-  viz1_gini_overlay.png
-  viz2_aggregate_redist.png
+  viz1_aggregate_redist.png
+  viz2_gini_overlay.png
   viz3_small_multiples.png
   viz4_coef_plot.png
+website/
+  src/App.jsx       — React site source
+  src/App.css       — site styles
+  public/           — figure PNGs served to the site
 ```
 
 ---
@@ -45,8 +51,8 @@ output/
 
 ### [01_clean.ipynb](code/01_clean.ipynb)
 **Takes in:** Raw ANES CSV (path set by `DATA_PATH` variable)  
-**Does:** Loads 10 key variables, coerces to numeric, recodes redistribution support (flipped so 7 = strongly pro), collapses party ID into Democrat/Independent/Republican, creates binary vote choice variable, filters to 1970+ and drops missing on core vars  
-**Outputs:** `output/anes_clean.csv` (N=46,708, 12 columns)
+**Does:** Loads 7 key variables, coerces to numeric, recodes redistribution support (flipped so 7 = strongly pro), collapses party ID into Democrat/Independent/Republican, creates binary vote choice variable, filters to 1970+ and drops missing on core vars  
+**Outputs:** `output/anes_clean.csv` (N=46,708, 9 columns)
 
 ### [02_analyze.ipynb](code/02_analyze.ipynb)
 **Takes in:** `output/anes_clean.csv`  
@@ -58,7 +64,7 @@ output/
 **Does:** Generates all four paper figures  
 **Outputs:**
 - `output/viz1_aggregate_redist.png` — aggregate redistribution support over time with Gini overlay
-- `output/viz2_gini_overlay.png` — partisan gap among low-income voters over time with Gini overlay
+- `output/viz2_gini_overlay.png` — partisan gap among all Democrats vs. Republicans over time with Gini overlay
 - `output/viz3_small_multiples.png` — redistribution by income quintile × party across three decades
 - `output/viz4_coef_plot.png` — logit coefficient on redistribution support predicting vote choice, by decade
 
