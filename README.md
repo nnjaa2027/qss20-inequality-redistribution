@@ -39,10 +39,6 @@ output/
   viz2_gini_overlay.png
   viz3_small_multiples.png
   viz4_coef_plot.png
-website/
-  src/App.jsx       — React site source
-  src/App.css       — site styles
-  public/           — figure PNGs served to the site
 ```
 
 ---
