@@ -36,6 +36,7 @@ output/
   anes_clean.csv
   decade_coefs.csv
   viz1_aggregate_redist.png
+  viz1_viz2_comnined.png
   viz2_gini_overlay.png
   viz3_small_multiples.png
   viz4_coef_plot.png
