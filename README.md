@@ -35,8 +35,9 @@ data/
 output/
   anes_clean.csv
   decade_coefs.csv
+  income_decade_coefs.csv
   viz1_aggregate_redist.png
-  viz1_viz2_comnined.png
+  viz1_viz2_combined.png
   viz2_gini_overlay.png
   viz3_small_multiples.png
   viz4_coef_plot.png
@@ -53,17 +54,18 @@ output/
 
 ### [02_analyze.ipynb](code/02_analyze.ipynb)
 **Takes in:** `output/anes_clean.csv`  
-**Does:** Sample characterization table; income-redistribution correlations by decade; partisan gap over time; weighted OLS predicting redistribution support (3 models); logistic regression predicting Republican vote choice (4 models); decade-by-decade logit coefficients  
-**Outputs:** `output/decade_coefs.csv`
+**Does:** Sample characterization table; income-redistribution correlations by decade; partisan gap over time; weighted OLS predicting redistribution support (3 models); logistic regression predicting Republican vote choice (4 models); decade-by-decade logit coefficients for both redistribution and income predictors  
+**Outputs:** `output/decade_coefs.csv`, `output/income_decade_coefs.csv`
 
 ### [03_visualize.ipynb](code/03_visualize.ipynb)
-**Takes in:** `output/anes_clean.csv`, `output/decade_coefs.csv`, `data/gini_census.csv`  
-**Does:** Generates all four paper figures  
+**Takes in:** `output/anes_clean.csv`, `output/decade_coefs.csv`, `output/income_decade_coefs.csv`, `data/gini_census.csv`  
+**Does:** Generates all paper figures  
 **Outputs:**
 - `output/viz1_aggregate_redist.png` — aggregate redistribution support over time with Gini overlay
+- `output/viz1_viz2_combined.png` — side-by-side of aggregate support and partisan divergence (paper Figure 1)
 - `output/viz2_gini_overlay.png` — partisan gap among all Democrats vs. Republicans over time with Gini overlay
 - `output/viz3_small_multiples.png` — redistribution by income quintile × party across three decades
-- `output/viz4_coef_plot.png` — logit coefficient on redistribution support predicting vote choice, by decade
+- `output/viz4_coef_plot.png` — logit coefficients by decade for both redistribution attitudes and income predicting Republican vote choice
 
 ---
 
